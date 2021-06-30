@@ -52,4 +52,87 @@ class Beslissing:Status( "LEVEL1") {
             )
 
         }
-    }    }
+    }
+
+    fun level2() {
+
+        if (score == 0) {
+            var gekozenWapen = Wapen(20)
+            println("--------------------level2---------------------\n\n")
+            println(
+                "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
+                        "1-Guns    DAMAGE: ${gekozenWapen.damage}\n"
+            )
+
+            println("Typ het nummer vanuit het volgende mogelijkheiden:")
+            var wapenKiezen = readLine()!!.toInt()
+
+            while (wapenKiezen != 1) {
+                println("$ansi_red" + "Jij hebt het onjuiste nummer gekozen, probeer het nogmaals onpieuw... $ansi_white")
+                wapenKiezen = readLine()!!.toInt()
+            }
+
+            println("Je hebt Guns gekozen")
+
+            name = "LEVEL2"
+            level++
+            status = "Wapen Gekozen"
+            println(
+                """
+                name: $name
+                level: $level
+                score: $score
+                kansen: $lives
+                status: $status
+                """
+            )
+        } else if (score == 1) {
+            var gekozenWapen = Wapen(20)
+            println("--------------------level2---------------------\n\n")
+            println(
+                "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
+                        "1-Guns     DAMAGE: ${gekozenWapen.damage}\n" +
+                        "2-Pistool  DAMAGE: ${gekozenWapen.damage + 20}\n"
+            )
+
+
+            println("Typ het nummer vanuit het volgende mogelijkheiden:")
+            var wapenKiezen = readLine()!!.toInt()
+
+            while (wapenKiezen != 1 && wapenKiezen != 2) {
+                println("$ansi_red" + "Jij hebt het onjuiste nummer gekozen, probeer het nogmaals onpieuw... $ansi_white")
+                wapenKiezen = readLine()!!.toInt()
+            }
+
+            when (wapenKiezen) {
+                1 -> println("Je hebt Guns gekozen\n")
+                2 -> println("Je hebt Pistool gekozen\n")
+            }
+        } else {
+            var gekozenWapen = Wapen(20)
+            println("--------------------level2---------------------\n\n")
+            println(
+                "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
+                        "1-Guns      DAMAGE: ${gekozenWapen.damage}\n" +
+                        "2-Pistool   DAMAGE: ${gekozenWapen.damage + 20}\n" +
+                        "3-Geweer    DAMAGE: ${gekozenWapen.damage + 40}\n"
+            )
+
+            println("Typ het nummer vanuit het volgende mogelijkheiden:")
+            var wapenKiezen = readLine()!!.toInt()
+
+            while (wapenKiezen != 1 && wapenKiezen != 2 && wapenKiezen != 3) {
+                println("$ansi_red" + "Jij hebt het onjuiste nummer gekozen, probeer het nogmaals onpieuw... $ansi_white")
+                wapenKiezen = readLine()!!.toInt()
+            }
+
+            when (wapenKiezen) {
+                1 -> println("Je hebt Guns gekozen, je gaat deze wapen gebruiken tijdens het vechten tegen de vaijndan\n")
+                2 -> println("Je hebt Pistool gekozen\n")
+                3 -> println("Je hebt Geweer gekozen\n")
+            }
+        }
+    }
+
+
+}
