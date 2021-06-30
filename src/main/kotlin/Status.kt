@@ -9,8 +9,8 @@ open class Status(var name:String, var score:Int = 0, var level:Int = 0, var liv
         score: $score
         level: $level
         kansen: $lives
+        health: $health
         wapen: ${Wapen.name}
-        status: $status
             
         """ )
     }

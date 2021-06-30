@@ -50,8 +50,10 @@ fun main(args: Array<String>) {
 
 
 //    -------level2-----
-
+        gameLevel.level2en2()
         gameLevel.level2()
+
+
 
     }
 
