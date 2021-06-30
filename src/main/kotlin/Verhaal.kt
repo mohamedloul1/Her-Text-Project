@@ -10,10 +10,18 @@ class Verhaal {
     val underline = "\u001b[4m"
     val bold = "\u001b[1m"
 
-    fun verhaal_level1(){
+    fun verhaal_level(){
         println("$ansi_yelllo" + "Het is tweede wereldoorlog, de oorlog woedt in Europa. Jij bent een Duits soldaat\n" +
                 "jij zit in een kamer van een oud gebouw, jij kijkt naar links dan zie je een sleutel en een hamer\n" +
                 "jij moet naar de kamer waar wapens zijn,wat zou je hiervoor kiezen om deur te kunnen openen\n " +
                 "wat voor element ga je kiezen$ansi_white sleutel$ansi_yelllo of$ansi_white hamer?")
     }
+
+    fun verhaal_level1A(){
+
+    }
+    fun verhaal_level1B(){
+
+    }
+
 }
