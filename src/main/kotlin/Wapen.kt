@@ -1,2 +1,2 @@
-class Wapen {
+class Wapen(var damage: Int) {
 }

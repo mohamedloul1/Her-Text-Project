@@ -41,6 +41,8 @@ fun main(args: Array<String>) {
 //-----------level1----------
         gameVerhaal.verhaal_level1()
         gameLevel.level1()
+//        -------level2-\
+        gameLevel.level2()
 
     }
 
