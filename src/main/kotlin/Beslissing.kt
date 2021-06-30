@@ -12,6 +12,7 @@ class Beslissing:Status( "LEVEL1",health = 100) {
     val underline = "\u001b[4m"
     val bold = "\u001b[1m"
 
+    //level 1B
     fun level1() {
         var level1: String? = readLine()!!.toLowerCase()
 
