@@ -30,7 +30,7 @@ class GameSettings() {
             username = readLine()
         }
 
-        println("$ansi_white" + "Welkom " + "$mageneta" + username + "$ansi_white in Mo game, \n")
+        println("$ansi_white" + "Welkom " + "$mageneta" + username + "$ansi_white in Fighting game, \n")
 
     }
 

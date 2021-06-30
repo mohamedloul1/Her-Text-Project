@@ -4,10 +4,10 @@ open class Enemy(val name:String, var health: Int, var lives: Int) {
         val remainingHealth = health - damage
         if(remainingHealth > 0){
             health = remainingHealth
-            println("$name took $damage points of damage and has $health health left")
+            println("$name heeft $damage punt van damage gekregen en heeft $health health nog")
         } else {
             lives -= 1
-            println("$name lost a life")
+            println("$name een leven verloren")
         }
     }
 

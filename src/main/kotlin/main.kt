@@ -28,7 +28,7 @@ fun main(args: Array<String>) {
         player.kledingKiezen()
         player.startVerhaal()
 
-        var huidigeStatus = Status(  "verhaal gestart")
+        var huidigeStatus = Status(  "verhaal gestart",0,0,3,"Vast",100)
 
         println( "$ansi_white"+"Hallo " + "$mageneta"+"Speler"+ "$ansi_white Hieronder wordt je status weergeven:")
 
@@ -38,15 +38,21 @@ fun main(args: Array<String>) {
         var gameVerhaal = Verhaal()
         var gameLevel = Beslissing()
 
+
+
+
 //-----------level1----------
         gameVerhaal.verhaal_level()
         gameLevel.level1()
-<<<<<<< HEAD
-=======
-//        -------level2-\
+
+
+
+
+
+//    -------level2-----
+
         gameLevel.level2()
 
->>>>>>> c0ecd54efc51a2670f2e3f17d577f7a41f1f9548
     }
 
 
@@ -55,3 +61,8 @@ fun main(args: Array<String>) {
 
 }
 
+/*
+fun main(args: Array<String>){
+    val age = Status("age",0,0,3,"rve",100)
+    age.show()
+}*/

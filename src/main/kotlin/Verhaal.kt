@@ -17,11 +17,4 @@ class Verhaal {
                 "wat voor element ga je kiezen$ansi_white sleutel$ansi_yelllo of$ansi_white hamer?")
     }
 
-    fun verhaal_level1A(){
-
-    }
-    fun verhaal_level1B(){
-
-    }
-
 }

@@ -1,4 +1,4 @@
-class Beslissing:Status( "LEVEL1") {
+class Beslissing:Status( "LEVEL1",health = 100) {
 
 
     //    color code
@@ -35,7 +35,74 @@ class Beslissing:Status( "LEVEL1") {
                 status: $status
                 """
             )
-        } else {
+        }
+        else if(level1 == "hamer") {
+            println("wowww goed gedaan!")
+            name = "LEVEL1"
+            level++
+            score++
+            status = "${ansi_green}In de kamer waar wapens zijn$ansi_white"
+            println(
+                """
+                name: $name
+                level: $level
+                score: $ansi_red$score $ansi_white
+                kansen: $ansi_yelllo$lives $ansi_white
+                status: $status
+                """
+            )
+
+            var player = Status("$name",score,level,lives,status,100)
+
+            var enemy = Enemy("Crusher",100,0)
+
+            println("je hebt nu een enemy voor je, je moet hem dood maken,")
+            println("met wat ga je hem dood maken??")
+            println("gebruik je hamer zodat je kan hem dood maken")
+            println("type gewoon hamer om de enemy dood te maken")
+
+            var input = readLine()
+            if (input != "hamer"){
+                println("je hebt niet hamer goed getypt of iets anders is fout gegaan")
+            }
+            enemy.takeDamage(50)
+            println(enemy)
+
+            println("${ansi_red}nu heeft de enemy jou gedamaged$ansi_white")
+            player.takeDamage(50)
+            player.show()
+
+            println("nu moet je alleen 1 keer meer slaan")
+            println("type $ansi_blue hamer $ansi_white")
+            input = readLine()
+
+            while (input != "hamer"){
+                println("je hebt niet hamer goed getypt of iets anders is fout gegaan")
+            }
+            println("je hebt de enemy dood gemaakt")
+            println("nu je kan een nieuwe wapen krijgen, kies je wapen $ansi_white pistool of $ansi_white blaster")
+
+            var pistool = Wapen("Pistool",30)
+            var blaster = Wapen("blaster",40)
+
+            input = readLine()
+
+            if (input == "pistool"){
+                player.Wapen = pistool
+            }
+            else if (input == "blaster"){
+                player.Wapen = blaster
+            }
+            else{
+                println("je heb geen goede wapen gekozen of iets heeft fout gegaan")
+            }
+            println("nu ga je naar level 2")
+            player.level = 2
+            player.score = 64
+            player.show()
+
+        }
+        else {
             println("$ansi_white" + "Deze kueze is$ansi_red fout$ansi_white genoteerd")
             name = "LEVEL1"
             lives--
@@ -57,7 +124,7 @@ class Beslissing:Status( "LEVEL1") {
     fun level2() {
 
         if (score == 0) {
-            var gekozenWapen = Wapen(20)
+            var gekozenWapen = Wapen("sleutel",20)
             println("--------------------level2---------------------\n\n")
             println(
                 "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
@@ -87,7 +154,7 @@ class Beslissing:Status( "LEVEL1") {
                 """
             )
         } else if (score == 1) {
-            var gekozenWapen = Wapen(20)
+            var gekozenWapen = Wapen("hamer",20)
             println("--------------------level2---------------------\n\n")
             println(
                 "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
@@ -108,8 +175,8 @@ class Beslissing:Status( "LEVEL1") {
                 1 -> println("Je hebt Guns gekozen\n")
                 2 -> println("Je hebt Pistool gekozen\n")
             }
-        } else {
-            var gekozenWapen = Wapen(20)
+        }else {
+            var gekozenWapen = Wapen("",20)
             println("--------------------level2---------------------\n\n")
             println(
                 "Kies een wapen en het kracht van je wapen wordt gebasseerd op je score:\n" +
@@ -133,6 +200,5 @@ class Beslissing:Status( "LEVEL1") {
             }
         }
     }
-
 
 }
